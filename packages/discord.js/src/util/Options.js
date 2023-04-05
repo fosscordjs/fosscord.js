@@ -1,9 +1,8 @@
 'use strict';
 
 const process = require('node:process');
-const { DefaultRestOptions, DefaultUserAgentAppendix } = require('@discordjs/rest');
+const { DefaultRestOptions } = require('@discordjs/rest');
 const { toSnakeCase } = require('./Transformers');
-const { version } = require('../../package.json');
 
 /**
  * @typedef {Function} CacheFactory
@@ -29,7 +28,7 @@ const { version } = require('../../package.json');
  * @property {MessageMentionOptions} [allowedMentions] The default value for {@link BaseMessageOptions#allowedMentions}
  * @property {Partials[]} [partials] Structures allowed to be partial. This means events can be emitted even when
  * they're missing all the data for a particular structure. See the "Partial Structures" topic on the
- * [guide](https://discordjs.guide/popular-topics/partials.html) for some
+ * [guide](https://spacebarjs.guide/popular-topics/partials.html) for some
  * important usage information, as partials require you to put checks in place when handling data.
  * @property {boolean} [failIfNotExists=true] The default value for {@link MessageReplyOptions#failIfNotExists}
  * @property {PresenceData} [presence={}] Presence data to use upon login
@@ -72,14 +71,6 @@ const { version } = require('../../package.json');
  */
 class Options extends null {
   /**
-   * The default user agent appendix.
-   * @type {string}
-   * @memberof Options
-   * @private
-   */
-  static userAgentAppendix = `discord.js/${version} ${DefaultUserAgentAppendix}`.trimEnd();
-
-  /**
    * The default client options.
    * @returns {ClientOptions}
    */
@@ -98,15 +89,12 @@ class Options extends null {
         compress: false,
         properties: {
           os: process.platform,
-          browser: 'discord.js',
-          device: 'discord.js',
+          browser: 'spacebar.js',
+          device: 'spacebar.js',
         },
         version: 10,
       },
-      rest: {
-        ...DefaultRestOptions,
-        userAgentAppendix: this.userAgentAppendix,
-      },
+      rest: DefaultRestOptions,
       jsonTransformer: toSnakeCase,
     };
   }
@@ -198,5 +186,5 @@ module.exports = Options;
 
 /**
  * @external RESTOptions
- * @see {@link https://discord.js.org/#/docs/rest/main/typedef/RESTOptions}
+ * @see {@link https://spacebar.js.org/#/docs/rest/main/typedef/RESTOptions}
  */

@@ -74,5 +74,5 @@ module.exports = StringSelectMenuBuilder;
 
 /**
  * @external BuildersSelectMenu
- * @see {@link https://discord.js.org/#/docs/builders/main/class/SelectMenuBuilder}
+ * @see {@link https://spacebar.js.org/#/docs/builders/main/class/SelectMenuBuilder}
  */

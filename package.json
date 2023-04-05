@@ -1,7 +1,7 @@
 {
-	"name": "@discordjs/discord.js",
+	"name": "@spacebarjs/spacebar.js",
 	"version": "0.0.0",
-	"description": "A powerful library for interacting with the Discord API",
+	"description": "A powerful library for interacting with the Spacebar API",
 	"private": true,
 	"scripts": {
 		"build": "turbo run build",
@@ -27,24 +27,25 @@
 		"Amish Shah <amishshah.2k@gmail.com>",
 		"Vlad Frangu <kingdgrizzle@gmail.com>",
 		"SpaceEEC <spaceeec@yahoo.com>",
-		"Aura Román <kyradiscord@gmail.com>"
+		"Aura Román <kyradiscord@gmail.com>",
+		"spacebar.js <contact@fosscordjs.com>"
 	],
 	"keywords": [
-		"discord",
+		"spacebar",
 		"api",
 		"bot",
 		"client",
 		"node",
-		"discordapp"
+		"spacebarapp"
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/discordjs/discord.js.git"
+		"url": "https://github.com/spacebarjs/spacebar.js.git"
 	},
 	"bugs": {
-		"url": "https://github.com/discordjs/discord.js/issues"
+		"url": "https://github.com/spacebar/spacebar.js/issues"
 	},
-	"homepage": "https://discord.js.org",
+	"homepage": "https://spacebarjs.github.io/",
 	"devDependencies": {
 		"@commitlint/cli": "^17.5.1",
 		"@commitlint/config-angular": "^17.4.4",
@@ -55,10 +56,10 @@
 		"is-ci": "^3.0.1",
 		"lint-staged": "^13.2.0",
 		"tsup": "^6.7.0",
-		"turbo": "^1.8.8",
-		"typescript": "^5.0.3",
+		"turbo": "^1.8.6",
+		"typescript": "^5.0.2",
 		"unocss": "^0.50.6",
-		"vercel": "^28.18.3",
+		"vercel": "^28.18.2",
 		"vitest": "^0.29.8"
 	},
 	"resolutions": {

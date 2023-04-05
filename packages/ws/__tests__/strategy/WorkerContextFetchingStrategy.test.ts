@@ -56,7 +56,7 @@ test('session info', async () => {
 
 	mockPool
 		.intercept({
-			path: '/api/v10/gateway/bot',
+			path: '/gateway/bot',
 			method: 'GET',
 		})
 		.reply(() => ({

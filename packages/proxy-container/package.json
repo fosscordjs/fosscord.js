@@ -36,26 +36,26 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/discordjs/discord.js.git"
+		"url": "git+https://github.com/spacebarjs/spacebar.js.git"
 	},
 	"bugs": {
-		"url": "https://github.com/discordjs/discord.js/issues"
+		"url": "https://github.com/spacebarjs/spacebar.js/issues"
 	},
-	"homepage": "https://discord.js.org",
+	"homepage": "https://spacebar.js.org",
 	"dependencies": {
 		"@discordjs/proxy": "workspace:^",
 		"@discordjs/rest": "workspace:^",
 		"tslib": "^2.5.0"
 	},
 	"devDependencies": {
-		"@types/node": "16.18.23",
+		"@types/node": "16.18.21",
 		"cross-env": "^7.0.3",
-		"eslint": "^8.37.0",
+		"eslint": "^8.36.0",
 		"eslint-config-neon": "^0.1.41",
 		"eslint-formatter-pretty": "^5.0.0",
 		"prettier": "^2.8.7",
 		"tsup": "^6.7.0",
-		"typescript": "^5.0.3"
+		"typescript": "^5.0.2"
 	},
 	"engines": {
 		"node": ">=16.9.0"

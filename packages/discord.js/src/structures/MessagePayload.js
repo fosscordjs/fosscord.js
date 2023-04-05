@@ -297,5 +297,5 @@ module.exports = MessagePayload;
 
 /**
  * @external RawFile
- * @see {@link https://discord.js.org/#/docs/rest/main/typedef/RawFile}
+ * @see {@link https://spacebar.js.org/#/docs/rest/main/typedef/RawFile}
  */

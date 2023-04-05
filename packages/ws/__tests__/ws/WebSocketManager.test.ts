@@ -45,7 +45,7 @@ test('fetch gateway information', async () => {
 
 	mockPool
 		.intercept({
-			path: '/api/v10/gateway/bot',
+			path: '/gateway/bot',
 			method: 'GET',
 		})
 		.reply(fetch);
@@ -63,7 +63,7 @@ test('fetch gateway information', async () => {
 	fetch.mockRestore();
 	mockPool
 		.intercept({
-			path: '/api/v10/gateway/bot',
+			path: '/gateway/bot',
 			method: 'GET',
 		})
 		.reply(fetch);
@@ -75,7 +75,7 @@ test('fetch gateway information', async () => {
 	fetch.mockRestore();
 	mockPool
 		.intercept({
-			path: '/api/v10/gateway/bot',
+			path: '/gateway/bot',
 			method: 'GET',
 		})
 		.reply(fetch);
@@ -138,7 +138,7 @@ test('update shard count', async () => {
 
 	mockPool
 		.intercept({
-			path: '/api/v10/gateway/bot',
+			path: '/gateway/bot',
 			method: 'GET',
 		})
 		.reply(fetch);
@@ -149,7 +149,7 @@ test('update shard count', async () => {
 	fetch.mockRestore();
 	mockPool
 		.intercept({
-			path: '/api/v10/gateway/bot',
+			path: '/gateway/bot',
 			method: 'GET',
 		})
 		.reply(fetch);
@@ -216,7 +216,7 @@ test('strategies', async () => {
 
 	mockPool
 		.intercept({
-			path: '/api/v10/gateway/bot',
+			path: '/gateway/bot',
 			method: 'GET',
 		})
 		.reply(fetch);

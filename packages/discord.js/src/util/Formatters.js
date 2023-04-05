@@ -183,7 +183,7 @@ const {
 
 /**
  * Contains various Discord-specific functions for formatting messages.
- * @deprecated This class is redundant as all methods of the class can be imported from discord.js directly.
+ * @deprecated This class is redundant as all methods of the class can be imported from spacebar.js directly.
  */
 class Formatters extends null {
   /**
@@ -193,11 +193,11 @@ class Formatters extends null {
    * @memberof Formatters
    * @param {string} content The content to wrap
    * @returns {string}
-   * @deprecated Import this method directly from discord.js instead.
+   * @deprecated Import this method directly from spacebar.js instead.
    */
   static blockQuote = deprecate(
     blockQuote,
-    'Formatters.blockQuote() is deprecated. Import this method directly from discord.js instead.',
+    'Formatters.blockQuote() is deprecated. Import this method directly from spacebar.js instead.',
   );
 
   /**
@@ -206,11 +206,11 @@ class Formatters extends null {
    * @memberof Formatters
    * @param {string} content The content to wrap
    * @returns {string}
-   * @deprecated Import this method directly from discord.js instead.
+   * @deprecated Import this method directly from spacebar.js instead.
    */
   static bold = deprecate(
     bold,
-    'Formatters.bold() is deprecated. Import this method directly from discord.js instead.',
+    'Formatters.bold() is deprecated. Import this method directly from spacebar.js instead.',
   );
 
   /**
@@ -219,11 +219,11 @@ class Formatters extends null {
    * @memberof Formatters
    * @param {Snowflake} channelId The channel id to format
    * @returns {string}
-   * @deprecated Import this method directly from discord.js instead.
+   * @deprecated Import this method directly from spacebar.js instead.
    */
   static channelMention = deprecate(
     channelMention,
-    'Formatters.channelMention() is deprecated. Import this method directly from discord.js instead.',
+    'Formatters.channelMention() is deprecated. Import this method directly from spacebar.js instead.',
   );
 
   /**
@@ -233,11 +233,11 @@ class Formatters extends null {
    * @param {string} contentOrLanguage The language to use or content if a second parameter isn't provided
    * @param {string} [content] The content to wrap
    * @returns {string}
-   * @deprecated Import this method directly from discord.js instead.
+   * @deprecated Import this method directly from spacebar.js instead.
    */
   static codeBlock = deprecate(
     codeBlock,
-    'Formatters.codeBlock() is deprecated. Import this method directly from discord.js instead.',
+    'Formatters.codeBlock() is deprecated. Import this method directly from spacebar.js instead.',
   );
 
   /**
@@ -247,11 +247,11 @@ class Formatters extends null {
    * @param {string} emojiId The emoji id to format
    * @param {boolean} [animated=false] Whether the emoji is animated
    * @returns {string}
-   * @deprecated Import this method directly from discord.js instead.
+   * @deprecated Import this method directly from spacebar.js instead.
    */
   static formatEmoji = deprecate(
     formatEmoji,
-    'Formatters.formatEmoji() is deprecated. Import this method directly from discord.js instead.',
+    'Formatters.formatEmoji() is deprecated. Import this method directly from spacebar.js instead.',
   );
 
   /**
@@ -260,11 +260,11 @@ class Formatters extends null {
    * @memberof Formatters
    * @param {string} content The content to wrap
    * @returns {string}
-   * @deprecated Import this method directly from discord.js instead.
+   * @deprecated Import this method directly from spacebar.js instead.
    */
   static hideLinkEmbed = deprecate(
     hideLinkEmbed,
-    'Formatters.hideLinkEmbed() is deprecated. Import this method directly from discord.js instead.',
+    'Formatters.hideLinkEmbed() is deprecated. Import this method directly from spacebar.js instead.',
   );
 
   /**
@@ -275,11 +275,11 @@ class Formatters extends null {
    * @param {string} url The URL the content links to
    * @param {string} [title] The title shown when hovering on the masked link
    * @returns {string}
-   * @deprecated Import this method directly from discord.js instead.
+   * @deprecated Import this method directly from spacebar.js instead.
    */
   static hyperlink = deprecate(
     hyperlink,
-    'Formatters.hyperlink() is deprecated. Import this method directly from discord.js instead.',
+    'Formatters.hyperlink() is deprecated. Import this method directly from spacebar.js instead.',
   );
 
   /**
@@ -288,11 +288,11 @@ class Formatters extends null {
    * @memberof Formatters
    * @param {string} content The content to wrap
    * @returns {string}
-   * @deprecated Import this method directly from discord.js instead.
+   * @deprecated Import this method directly from spacebar.js instead.
    */
   static inlineCode = deprecate(
     inlineCode,
-    'Formatters.inlineCode() is deprecated. Import this method directly from discord.js instead.',
+    'Formatters.inlineCode() is deprecated. Import this method directly from spacebar.js instead.',
   );
 
   /**
@@ -301,11 +301,11 @@ class Formatters extends null {
    * @memberof Formatters
    * @param {string} content The content to wrap
    * @returns {string}
-   * @deprecated Import this method directly from discord.js instead.
+   * @deprecated Import this method directly from spacebar.js instead.
    */
   static italic = deprecate(
     italic,
-    'Formatters.italic() is deprecated. Import this method directly from discord.js instead.',
+    'Formatters.italic() is deprecated. Import this method directly from spacebar.js instead.',
   );
 
   /**
@@ -314,11 +314,11 @@ class Formatters extends null {
    * @memberof Formatters
    * @param {string} content The content to wrap
    * @returns {string}
-   * @deprecated Import this method directly from discord.js instead.
+   * @deprecated Import this method directly from spacebar.js instead.
    */
   static quote = deprecate(
     quote,
-    'Formatters.quote() is deprecated. Import this method directly from discord.js instead.',
+    'Formatters.quote() is deprecated. Import this method directly from spacebar.js instead.',
   );
 
   /**
@@ -327,11 +327,11 @@ class Formatters extends null {
    * @memberof Formatters
    * @param {Snowflake} roleId The role id to format
    * @returns {string}
-   * @deprecated Import this method directly from discord.js instead.
+   * @deprecated Import this method directly from spacebar.js instead.
    */
   static roleMention = deprecate(
     roleMention,
-    'Formatters.roleMention() is deprecated. Import this method directly from discord.js instead.',
+    'Formatters.roleMention() is deprecated. Import this method directly from spacebar.js instead.',
   );
 
   /**
@@ -340,11 +340,11 @@ class Formatters extends null {
    * @memberof Formatters
    * @param {string} content The content to spoiler
    * @returns {string}
-   * @deprecated Import this method directly from discord.js instead.
+   * @deprecated Import this method directly from spacebar.js instead.
    */
   static spoiler = deprecate(
     spoiler,
-    'Formatters.spoiler() is deprecated. Import this method directly from discord.js instead.',
+    'Formatters.spoiler() is deprecated. Import this method directly from spacebar.js instead.',
   );
 
   /**
@@ -353,11 +353,11 @@ class Formatters extends null {
    * @memberof Formatters
    * @param {string} content The content to wrap
    * @returns {string}
-   * @deprecated Import this method directly from discord.js instead.
+   * @deprecated Import this method directly from spacebar.js instead.
    */
   static strikethrough = deprecate(
     strikethrough,
-    'Formatters.strikethrough() is deprecated. Import this method directly from discord.js instead.',
+    'Formatters.strikethrough() is deprecated. Import this method directly from spacebar.js instead.',
   );
 
   /**
@@ -367,11 +367,11 @@ class Formatters extends null {
    * @param {number|Date} [date] The date to format
    * @param {TimestampStylesString} [style] The style to use
    * @returns {string}
-   * @deprecated Import this method directly from discord.js instead.
+   * @deprecated Import this method directly from spacebar.js instead.
    */
   static time = deprecate(
     time,
-    'Formatters.time() is deprecated. Import this method directly from discord.js instead.',
+    'Formatters.time() is deprecated. Import this method directly from spacebar.js instead.',
   );
 
   /**
@@ -379,7 +379,7 @@ class Formatters extends null {
    * [styles](https://discord.com/developers/docs/reference#message-formatting-timestamp-styles) supported by Discord.
    * @type {Object<string, TimestampStylesString>}
    * @memberof Formatters
-   * @deprecated Import this property directly from discord.js instead.
+   * @deprecated Import this property directly from spacebar.js instead.
    */
   static TimestampStyles = TimestampStyles;
 
@@ -389,11 +389,11 @@ class Formatters extends null {
    * @memberof Formatters
    * @param {string} content The content to wrap
    * @returns {string}
-   * @deprecated Import this method directly from discord.js instead.
+   * @deprecated Import this method directly from spacebar.js instead.
    */
   static underscore = deprecate(
     underscore,
-    'Formatters.underscore() is deprecated. Import this method directly from discord.js instead.',
+    'Formatters.underscore() is deprecated. Import this method directly from spacebar.js instead.',
   );
 
   /**
@@ -402,11 +402,11 @@ class Formatters extends null {
    * @memberof Formatters
    * @param {Snowflake} userId The user id to format
    * @returns {string}
-   * @deprecated Import this method directly from discord.js instead.
+   * @deprecated Import this method directly from spacebar.js instead.
    */
   static userMention = deprecate(
     userMention,
-    'Formatters.userMention() is deprecated. Import this method directly from discord.js instead.',
+    'Formatters.userMention() is deprecated. Import this method directly from spacebar.js instead.',
   );
 }
 

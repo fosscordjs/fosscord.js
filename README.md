@@ -1,47 +1,115 @@
 <div align="center">
 	<br />
 	<p>
-		<a href="https://discord.js.org"><img src="https://discord.js.org/static/logo.svg" width="546" alt="discord.js" /></a>
+		<a href="https://spacebarjs.github.io/"><img src="https://github.com/spacebarjs.png" width="100" alt="spacebar.js" /></a>
 	</p>
 	<br />
 	<p>
-		<a href="https://discord.gg/djs"><img src="https://img.shields.io/discord/222078108977594368?color=5865F2&logo=discord&logoColor=white" alt="Discord server" /></a>
-		<a href="https://www.npmjs.com/package/discord.js"><img src="https://img.shields.io/npm/v/discord.js.svg?maxAge=3600" alt="npm version" /></a>
-		<a href="https://www.npmjs.com/package/discord.js"><img src="https://img.shields.io/npm/dt/discord.js.svg?maxAge=3600" alt="npm downloads" /></a>
-		<a href="https://github.com/discordjs/discord.js/actions"><img src="https://github.com/discordjs/discord.js/actions/workflows/test.yml/badge.svg" alt="Tests status" /></a>
-		<a href="https://codecov.io/gh/discordjs/discord.js" ><img src="https://codecov.io/gh/discordjs/discord.js/branch/main/graph/badge.svg?precision=2" alt="Code coverage" /></a>
+		<a href="https://discord.com/invite/PESTjBKkr5"><img src="https://img.shields.io/discord/959215581364625458?color=CC4C00&logo=discord&logoColor=white" alt="Discord server" /></a>
+		<a href="https://www.npmjs.com/package/spacebar.js"><img src="https://img.shields.io/npm/v/spacebar.js.svg?maxAge=3600" alt="npm version" /></a>
+		<a href="https://www.npmjs.com/package/spacebar.js"><img src="https://img.shields.io/npm/dt/spacebar.js.svg?maxAge=3600" alt="npm downloads" /></a>
+		<a href="https://github.com/spacebarjs/spacebar.js/actions"><img src="https://github.com/spacebarjs/spacebar.js/actions/workflows/test.yml/badge.svg" alt="Tests status" /></a>
+		<a href="https://codecov.io/gh/spacebarjs/spacebar.js" ><img src="https://codecov.io/gh/spacebarjs/spacebar.js/branch/main/graph/badge.svg?precision=2" alt="Code coverage" /></a>
 	</p>
 	<p>
-		<a href="https://vercel.com/?utm_source=discordjs&utm_campaign=oss"><img src="https://raw.githubusercontent.com/discordjs/discord.js/main/.github/powered-by-vercel.svg" alt="Vercel" /></a>
+		<a href="https://vercel.com/?utm_source=spacebarjs&utm_campaign=oss"><img src="https://raw.githubusercontent.com/spacebarjs/spacebar.js/main/.github/powered-by-vercel.svg" alt="Vercel" /></a>
 	</p>
 </div>
 
 ## About
 
-This repository contains multiple packages with separate [releases][github-releases]. You can find the assembled Discord API wrapper at [`discord.js`][source]. It is a powerful [Node.js](https://nodejs.org/en) module that allows you to easily interact with the [Discord API](https://discord.com/developers/docs/intro).
+spacebar.js is a powerful [Node.js](https://nodejs.org) module that allows you to easily interact with the
+[Spacebar API](https://docs.spacebar.chat/).
 
-## Packages
+- Object-oriented
+- Predictable abstractions
+- Performant
+- 100% coverage of the Spacebar API
 
-- `discord.js` ([source][source]) - A powerful Node.js module for interacting with the Discord API
-- `@discordjs/brokers` ([source][brokers-source]) - A collection of brokers for use with discord.js
-- `@discordjs/builders` ([source][builders-source]) - A utility package for easily building Discord API payloads
-- `@discordjs/collection` ([source][collection-source]) - A powerful utility data structure
-- `@discordjs/core` ([source][core-source]) - A thinly abstracted wrapper around the core components of the Discord API
-- `@discordjs/formatters` ([source][formatters-source]) - A collection of functions for formatting strings
-- `@discordjs/proxy` ([source][proxy-source]) - A wrapper around `@discordjs/rest` for running an HTTP proxy
-- `@discordjs/rest` ([source][rest-source]) - A module for interacting with the Discord REST API
-- `@discordjs/voice` ([source][voice-source]) - A module for interacting with the Discord Voice API
-- `@discordjs/util` ([source][util-source]) - A collection of utility functions
-- `@discordjs/ws` ([source][ws-source]) - A wrapper around Discord's gateway
+## Installation
+
+**Node.js 16.9.0 or newer is required.**
+
+```sh
+npm install spacebar.js
+yarn add spacebar.js
+pnpm add spacebar.js
+```
+
+### Optional packages
+
+- [zlib-sync](https://www.npmjs.com/package/zlib-sync) for WebSocket data compression and inflation (`npm install zlib-sync`)
+- [erlpack](https://github.com/spacebarchat/erlpack) for significantly faster WebSocket data (de)serialisation (`npm install spacebarchat/erlpack`)
+- [bufferutil](https://www.npmjs.com/package/bufferutil) for a much faster WebSocket connection (`npm install bufferutil`)
+- [utf-8-validate](https://www.npmjs.com/package/utf-8-validate) in combination with `bufferutil` for much faster WebSocket processing (`npm install utf-8-validate`)
+- [@spacebarjs/voice](https://www.npmjs.com/package/@spacebarjs/voice) for interacting with the Spacebar Voice API (`npm install @spacebarjs/voice`)
+
+## Example usage
+
+Install spacebar.js:
+
+```sh
+npm install spacebar.js
+yarn add spacebar.js
+pnpm add spacebar.js
+```
+
+Register a slash command against the Spacebar API:
+
+```js
+const { REST, Routes } = require('spacebar.js');
+
+const commands = [
+	{
+		name: 'ping',
+		description: 'Replies with Pong!',
+	},
+];
+
+const rest = new REST({ version: '10' }).setToken(TOKEN);
+
+(async () => {
+	try {
+		console.log('Started refreshing application (/) commands.');
+
+		await rest.put(Routes.applicationCommands(CLIENT_ID), { body: commands });
+
+		console.log('Successfully reloaded application (/) commands.');
+	} catch (error) {
+		console.error(error);
+	}
+})();
+```
+
+Afterwards we can create a quite simple example bot:
+
+```js
+const { Client, GatewayIntentBits } = require('spacebar.js');
+const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+
+client.on('ready', () => {
+	console.log(`Logged in as ${client.user.tag}!`);
+});
+
+client.on('interactionCreate', async (interaction) => {
+	if (!interaction.isChatInputCommand()) return;
+
+	if (interaction.commandName === 'ping') {
+		await interaction.reply('Pong!');
+	}
+});
+
+client.login(TOKEN);
+```
 
 ## Links
 
 - [Website][website] ([source][website-source])
 - [Documentation][documentation]
 - [Guide][guide] ([source][guide-source])
-  Also see the v13 to v14 [Update Guide][guide-update], which includes updated and removed items from the library.
-- [discord.js Discord server][discord]
-- [Discord API Discord server][discord-api]
+  See also the [Update Guide][guide-update], including updated and removed items in the library.
+- [spacebar.js Discord server][spacebar]
+- [Spacebar API Discord server][spacebar-api]
 - [GitHub][source]
 - [npm][npm]
 - [Related libraries][related-libs]
@@ -52,35 +120,26 @@ This repository contains multiple packages with separate [releases][github-relea
 
 ## Contributing
 
-Please read through our [contribution guidelines][contributing] before starting a pull request. We welcome contributions of all kinds, not just code! If you're stuck for ideas, look for the [good first issue][good-first-issue] label on issues in the repository. If you have any questions about the project, feel free to ask them on [Discord][discord]. Before creating your own issue or pull request, always check to see if one already exists! Don't rush contributions, take your time and ensure you're doing it correctly.
+Before creating an issue, please ensure that it hasn't already been reported/suggested, and double-check the
+[documentation][documentation].  
+See [the contribution guide][contributing] if you'd like to submit a PR.
 
 ## Help
 
-If you don't understand something in the documentation, you are experiencing problems, or you just need a gentle nudge in the right direction, please join our [Discord server][discord].
+If you don't understand something in the documentation, you are experiencing problems, or you just need a gentle
+nudge in the right direction, please don't hesitate to join our official [spacebar.js Server][spacebar].
 
-[website]: https://discord.js.org
-[website-source]: https://github.com/discordjs/discord.js/tree/main/apps/website
-[documentation]: https://discord.js.org/docs
-[guide]: https://discordjs.guide/
-[guide-source]: https://github.com/discordjs/guide
-[guide-update]: https://discordjs.guide/additional-info/changes-in-v14.html
-[discord]: https://discord.gg/djs
-[discord-api]: https://discord.gg/discord-api
-[source]: https://github.com/discordjs/discord.js/tree/main/packages/discord.js
-[npm]: https://www.npmjs.com/package/discord.js
-[related-libs]: https://discord.com/developers/docs/topics/community-resources#libraries
-[rpc]: https://www.npmjs.com/package/discord-rpc
-[rpc-source]: https://github.com/discordjs/RPC
-[contributing]: https://github.com/discordjs/discord.js/blob/main/.github/CONTRIBUTING.md
-[github-releases]: https://github.com/discordjs/discord.js/releases
-[brokers-source]: https://github.com/discordjs/discord.js/tree/main/packages/brokers
-[builders-source]: https://github.com/discordjs/discord.js/tree/main/packages/builders
-[collection-source]: https://github.com/discordjs/discord.js/tree/main/packages/collection
-[core-source]: https://github.com/discordjs/discord.js/tree/main/packages/core
-[formatters-source]: https://github.com/discordjs/discord.js/tree/main/packages/formatters
-[proxy-source]: https://github.com/discordjs/discord.js/tree/main/packages/proxy
-[rest-source]: https://github.com/discordjs/discord.js/tree/main/packages/rest
-[voice-source]: https://github.com/discordjs/discord.js/tree/main/packages/voice
-[util-source]: https://github.com/discordjs/discord.js/tree/main/packages/util
-[ws-source]: https://github.com/discordjs/discord.js/tree/main/packages/ws
-[good-first-issue]: https://github.com/discordjs/discord.js/contribute
+[website]: https://spacebarjs.github.io/
+[website-source]: https://github.com/spacebarjs/spacebarjs.github.io
+[documentation]: https://spacebarjs.github.io/
+[guide]: https://spacebarjs.github.io/
+[guide-source]: https://github.com/spacebarjs/guide
+[guide-update]: https://spacebarjs.github.io/
+[spacebar]: https://discord.com/invite/PESTjBKkr5
+[spacebar-api]: https://discord.com/invite/jcCJJNR7vc
+[source]: https://github.com/spacebarjs/spacebar.js/tree/main/packages/spacebar.js
+[npm]: https://www.npmjs.com/package/spacebar.js
+[related-libs]: https://docs.spacebar.chat/setup/bots/#bot-libraries
+[rpc]: https://www.npmjs.com/package/spacebar-rpc
+[rpc-source]: https://github.com/spacebarjs/RPC
+[contributing]: https://github.com/spacebarjs/spacebar.js/blob/main/.github/CONTRIBUTING.md

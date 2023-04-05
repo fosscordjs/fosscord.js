@@ -37,7 +37,7 @@ afterAll(() => {
 test('simple GET', async () => {
 	mockPool
 		.intercept({
-			path: '/api/v10/simpleGet',
+			path: '/simpleGet',
 			method: 'GET',
 		})
 		.reply(() => ({
@@ -52,7 +52,7 @@ test('simple GET', async () => {
 			},
 		}));
 
-	const res = await supertest(server).get('/api/v10/simpleGet');
+	const res = await supertest(server).get('/simpleGet');
 	const headers = res.headers as Record<string, string>;
 
 	expect(headers['content-type']).toEqual(expect.stringMatching(/^application\/json/));
@@ -65,7 +65,7 @@ test('simple GET', async () => {
 test('failed request', async () => {
 	mockPool
 		.intercept({
-			path: '/api/v10/simpleGet',
+			path: '/simpleGet',
 			method: 'GET',
 		})
 		.reply(() => ({
@@ -74,7 +74,7 @@ test('failed request', async () => {
 			responseOptions,
 		}));
 
-	const res = await supertest(server).get('/api/v10/simpleGet');
+	const res = await supertest(server).get('/simpleGet');
 	const headers = res.headers as Record<string, string>;
 
 	expect(headers['content-type']).toEqual(expect.stringMatching(/^application\/json/));

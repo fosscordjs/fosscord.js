@@ -26,7 +26,7 @@ export interface RESTOptions {
 	/**
 	 * The base api path, without version
 	 *
-	 * @defaultValue `'https://discord.com/api'`
+	 * @defaultValue `'https://api.spacebar.chat'`
 	 */
 	api: string;
 	/**
@@ -39,7 +39,7 @@ export interface RESTOptions {
 	/**
 	 * The cdn path
 	 *
-	 * @defaultValue 'https://cdn.discordapp.com'
+	 * @defaultValue 'https://cdn.spacebar.chat'
 	 */
 	cdn: string;
 	/**
@@ -110,7 +110,7 @@ export interface RESTOptions {
 	/**
 	 * Extra information to add to the user agent
 	 *
-	 * @defaultValue DefaultUserAgentAppendix
+	 * @defaultValue `Node.js ${process.version}`
 	 */
 	userAgentAppendix: string;
 	/**

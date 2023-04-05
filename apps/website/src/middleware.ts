@@ -11,17 +11,15 @@ async function fetchLatestVersion(packageName: string) {
 
 export default async function middleware(request: NextRequest) {
 	if (request.nextUrl.pathname === '/docs') {
-		try {
-			const skip = await get<boolean>('SKIP_PACKAGE_VERSION_SELECTION');
-			if (skip) {
-				const latestVersion = await fetchLatestVersion('builders');
-				return NextResponse.redirect(new URL(`/docs/packages/builders/${latestVersion}`, request.url));
-			}
-		} catch {}
+		const skip = await get<boolean>('SKIP_PACKAGE_VERSION_SELECTION');
+		if (skip) {
+			const latestVersion = await fetchLatestVersion('builders');
+			return NextResponse.redirect(new URL(`/docs/packages/builders/${latestVersion}`, request.url));
+		}
 	}
 
-	if (request.nextUrl.pathname.includes('discord.js')) {
-		return NextResponse.redirect('https://old.discordjs.dev/#/docs/discord.js');
+	if (request.nextUrl.pathname.includes('spacebar.js')) {
+		return NextResponse.redirect('https://spacebar.js.org/#/docs/spacebar.js');
 	}
 
 	if (PACKAGES.some((pkg) => request.nextUrl.pathname.includes(pkg))) {
@@ -37,5 +35,5 @@ export default async function middleware(request: NextRequest) {
 }
 
 export const config = {
-	matcher: ['/docs', '/docs/packages/discord.js(.*)?', '/docs/packages/:package/stable/:member*'],
+	matcher: ['/docs', '/docs/packages/spacebar.js(.*)?', '/docs/packages/:package/stable/:member*'],
 };

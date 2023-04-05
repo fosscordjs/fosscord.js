@@ -4,7 +4,6 @@ export const PACKAGES = [
 	'collection',
 	'core',
 	'formatters',
-	'next',
 	'proxy',
 	'rest',
 	'util',
@@ -17,9 +16,9 @@ export const N_RECENT_VERSIONS = 2;
 export const OVERLOAD_SEPARATOR = ':';
 
 export const DESCRIPTION =
-	"discord.js is a powerful node.js module that allows you to interact with the Discord API very easily. It takes a much more object-oriented approach than most other JS Discord libraries, making your bot's code significantly tidier and easier to comprehend.";
+	"spacebar.js is a powerful node.js module that allows you to interact with the Discord API very easily. It takes a much more object-oriented approach than most other JS Discord libraries, making your bot's code significantly tidier and easier to comprehend.";
 
-export const CODE_EXAMPLE = `import { Client, GatewayIntentBits } from 'discord.js';
+export const CODE_EXAMPLE = `import { Client, GatewayIntentBits } from 'spacebar.js';
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 

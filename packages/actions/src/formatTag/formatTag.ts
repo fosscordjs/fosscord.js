@@ -5,7 +5,7 @@ export function formatTag(tag: string) {
 	if (parsed?.groups) {
 		return {
 			isSubpackage: typeof parsed.groups.package === 'string',
-			package: parsed.groups.package ?? 'discord.js',
+			package: parsed.groups.package ?? 'spacebar.js',
 			semver: parsed.groups.semver,
 		};
 	}

@@ -2,7 +2,7 @@ import { program } from 'commander';
 import { createPackage } from '../dist/index.mjs';
 
 program
-	.description('A script for creating discord.js packages.')
+	.description('A script for creating spacebar.js packages.')
 	.argument('<name>', 'The name of the new package.')
 	.argument('[description]', 'The description of the new package.');
 program.parse();

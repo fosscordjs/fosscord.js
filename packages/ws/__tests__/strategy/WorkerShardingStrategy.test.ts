@@ -170,7 +170,7 @@ test('spawn, connect, send a message, session info, and destroy', async () => {
 
 	mockPool
 		.intercept({
-			path: '/api/v10/gateway/bot',
+			path: '/gateway/bot',
 			method: 'GET',
 		})
 		.reply(() => ({

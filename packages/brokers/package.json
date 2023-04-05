@@ -1,6 +1,6 @@
 {
 	"name": "@discordjs/brokers",
-	"version": "0.2.0",
+	"version": "0.1.0",
 	"description": "Powerful set of message brokers",
 	"scripts": {
 		"test": "vitest run",
@@ -50,12 +50,12 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/discordjs/discord.js.git"
+		"url": "git+https://github.com/spacebarjs/spacebar.js.git"
 	},
 	"bugs": {
-		"url": "https://github.com/discordjs/discord.js/issues"
+		"url": "https://github.com/spacebarjs/spacebar.js/issues"
 	},
-	"homepage": "https://discord.js.org",
+	"homepage": "https://spacebar.js.org",
 	"dependencies": {
 		"@msgpack/msgpack": "^3.0.0-beta2",
 		"@vladfrangu/async_event_emitter": "^2.1.4",
@@ -64,15 +64,15 @@
 	"devDependencies": {
 		"@favware/cliff-jumper": "^2.0.0",
 		"@microsoft/api-extractor": "^7.34.4",
-		"@types/node": "16.18.23",
+		"@types/node": "16.18.21",
 		"@vitest/coverage-c8": "^0.29.8",
 		"cross-env": "^7.0.3",
-		"eslint": "^8.37.0",
+		"eslint": "^8.36.0",
 		"eslint-config-neon": "^0.1.41",
 		"eslint-formatter-pretty": "^5.0.0",
 		"prettier": "^2.8.7",
 		"tsup": "^6.7.0",
-		"typescript": "^5.0.3",
+		"typescript": "^5.0.2",
 		"vitest": "^0.29.8"
 	},
 	"engines": {

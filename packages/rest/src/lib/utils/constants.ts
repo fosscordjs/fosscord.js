@@ -4,12 +4,7 @@ import { Agent } from 'undici';
 import type { RESTOptions } from '../REST.js';
 
 export const DefaultUserAgent =
-	`DiscordBot (https://discord.js.org, [VI]{{inject}}[/VI])` as `DiscordBot (https://discord.js.org, ${string})`;
-
-/**
- * The default string to append onto the user agent.
- */
-export const DefaultUserAgentAppendix = process.release?.name === 'node' ? `Node.js/${process.version}` : '';
+	`DiscordBot (https://spacebar.js.org, [VI]{{inject}}[/VI])` as `DiscordBot (https://spacebar.js.org, ${string})`;
 
 export const DefaultRestOptions = {
 	get agent() {
@@ -19,9 +14,9 @@ export const DefaultRestOptions = {
 			},
 		});
 	},
-	api: 'https://discord.com/api',
+	api: 'https://api.spacebar.chat',
 	authPrefix: 'Bot',
-	cdn: 'https://cdn.discordapp.com',
+	cdn: 'https://cdn.spacebar.chat',
 	headers: {},
 	invalidRequestWarningInterval: 0,
 	globalRequestsPerSecond: 50,
@@ -29,7 +24,7 @@ export const DefaultRestOptions = {
 	rejectOnRateLimit: null,
 	retries: 3,
 	timeout: 15_000,
-	userAgentAppendix: DefaultUserAgentAppendix,
+	userAgentAppendix: `Node.js ${process.version}`,
 	version: APIVersion,
 	hashSweepInterval: 14_400_000, // 4 Hours
 	hashLifetime: 86_400_000, // 24 Hours
@@ -57,7 +52,7 @@ export type StickerExtension = (typeof ALLOWED_STICKER_EXTENSIONS)[number];
 export type ImageSize = (typeof ALLOWED_SIZES)[number];
 
 export const OverwrittenMimeTypes = {
-	// https://github.com/discordjs/discord.js/issues/8557
+	// https://github.com/spacebarjs/spacebar.js/issues/8557
 	'image/apng': 'image/png',
 } as const satisfies Readonly<Record<string, string>>;
 

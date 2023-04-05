@@ -517,7 +517,7 @@ client.on('messageCreate', async message => {
         type: ComponentType.Button,
         label: 'another test',
         style: ButtonStyle.Link,
-        url: 'https://discord.js.org',
+        url: 'https://spacebar.js.org',
       },
     ],
   };

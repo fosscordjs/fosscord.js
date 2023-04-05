@@ -34,7 +34,6 @@ export const PACKAGES = [
 	'collection',
 	'core',
 	'formatters',
-	'next',
 	'proxy',
 	'rest',
 	'util',

@@ -46,7 +46,7 @@ Below is a deployment script you can use. Focus on these variables:
 
 - _`clientId`_: Your application's client id
 - _`guildId`_: Your development server's id
-- _`commands`_: An array of commands to register. The [slash command builder](/popular-topics/builders.md#slash-command-builders) from _`discord.js`_ is used to build the data for your commands
+- _`commands`_: An array of commands to register. The [slash command builder](/popular-topics/builders.md#slash-command-builders) from _`spacebar.js`_ is used to build the data for your commands
 
 <Alert title="Tip" type="success">
 	In order to get your application's client id, go to [Discord Developer
@@ -59,7 +59,7 @@ Below is a deployment script you can use. Focus on these variables:
 <CH.Code>
 
 ```js deploy-commands.js mark=4,6:10
-const { REST, SlashCommandBuilder, Routes } = require('discord.js');
+const { REST, SlashCommandBuilder, Routes } = require('spacebar.js');
 const { clientId, guildId, token } = require('./config.json');
 
 const commands = [
@@ -126,7 +126,7 @@ client.login(token);
 
 ### Server info command
 
-Note that servers are referred to as "guilds" in the Discord API and discord.js library. _`interaction.guild`_ refers to the guild the interaction was sent in (a <DocsLink path="class/Guild" /> instance), which exposes properties such as _`.name`_ or _`.memberCount`_.
+Note that servers are referred to as "guilds" in the Discord API and spacebar.js library. _`interaction.guild`_ refers to the guild the interaction was sent in (a <DocsLink path="class/Guild" /> instance), which exposes properties such as _`.name`_ or _`.memberCount`_.
 
 <CH.Code>
 
@@ -163,7 +163,7 @@ client.on('interactionCreate', async (interaction) => {
 			time: 'Today at 21:00',
 		}}
 	>
-		<p>Server name: discord.js Guide</p>
+		<p>Server name: spacebar.js Guide</p>
 		<p>Total members: 2</p>
 	</DiscordMessage>
 </DiscordMessages>

@@ -80,23 +80,23 @@ describe('Embed', () => {
 
 	describe('Embed URL', () => {
 		test('GIVEN an embed with a pre-defined url THEN returns valid toJSON data', () => {
-			const embed = new EmbedBuilder({ url: 'https://discord.js.org/' });
+			const embed = new EmbedBuilder({ url: 'https://spacebar.js.org/' });
 			expect(embed.toJSON()).toStrictEqual({
-				url: 'https://discord.js.org/',
+				url: 'https://spacebar.js.org/',
 			});
 		});
 
 		test('GIVEN an embed using Embed#setURL THEN returns valid toJSON data', () => {
 			const embed = new EmbedBuilder();
-			embed.setURL('https://discord.js.org/');
+			embed.setURL('https://spacebar.js.org/');
 
 			expect(embed.toJSON()).toStrictEqual({
-				url: 'https://discord.js.org/',
+				url: 'https://spacebar.js.org/',
 			});
 		});
 
 		test('GIVEN an embed with a pre-defined title THEN unset title THEN return valid toJSON data', () => {
-			const embed = new EmbedBuilder({ url: 'https://discord.js.org' });
+			const embed = new EmbedBuilder({ url: 'https://spacebar.js.org' });
 			embed.setURL(null);
 
 			expect(embed.toJSON()).toStrictEqual({ url: undefined });
@@ -177,23 +177,23 @@ describe('Embed', () => {
 
 	describe('Embed Thumbnail', () => {
 		test('GIVEN an embed with a pre-defined thumbnail THEN returns valid toJSON data', () => {
-			const embed = new EmbedBuilder({ thumbnail: { url: 'https://discord.js.org/static/logo.svg' } });
+			const embed = new EmbedBuilder({ thumbnail: { url: 'https://spacebar.js.org/static/logo.svg' } });
 			expect(embed.toJSON()).toStrictEqual({
-				thumbnail: { url: 'https://discord.js.org/static/logo.svg' },
+				thumbnail: { url: 'https://spacebar.js.org/static/logo.svg' },
 			});
 		});
 
 		test('GIVEN an embed using Embed#setThumbnail THEN returns valid toJSON data', () => {
 			const embed = new EmbedBuilder();
-			embed.setThumbnail('https://discord.js.org/static/logo.svg');
+			embed.setThumbnail('https://spacebar.js.org/static/logo.svg');
 
 			expect(embed.toJSON()).toStrictEqual({
-				thumbnail: { url: 'https://discord.js.org/static/logo.svg' },
+				thumbnail: { url: 'https://spacebar.js.org/static/logo.svg' },
 			});
 		});
 
 		test('GIVEN an embed with a pre-defined thumbnail THEN unset thumbnail THEN return valid toJSON data', () => {
-			const embed = new EmbedBuilder({ thumbnail: { url: 'https://discord.js.org/static/logo.svg' } });
+			const embed = new EmbedBuilder({ thumbnail: { url: 'https://spacebar.js.org/static/logo.svg' } });
 			embed.setThumbnail(null);
 
 			expect(embed.toJSON()).toStrictEqual({ thumbnail: undefined });
@@ -208,23 +208,23 @@ describe('Embed', () => {
 
 	describe('Embed Image', () => {
 		test('GIVEN an embed with a pre-defined image THEN returns valid toJSON data', () => {
-			const embed = new EmbedBuilder({ image: { url: 'https://discord.js.org/static/logo.svg' } });
+			const embed = new EmbedBuilder({ image: { url: 'https://spacebar.js.org/static/logo.svg' } });
 			expect(embed.toJSON()).toStrictEqual({
-				image: { url: 'https://discord.js.org/static/logo.svg' },
+				image: { url: 'https://spacebar.js.org/static/logo.svg' },
 			});
 		});
 
 		test('GIVEN an embed using Embed#setImage THEN returns valid toJSON data', () => {
 			const embed = new EmbedBuilder();
-			embed.setImage('https://discord.js.org/static/logo.svg');
+			embed.setImage('https://spacebar.js.org/static/logo.svg');
 
 			expect(embed.toJSON()).toStrictEqual({
-				image: { url: 'https://discord.js.org/static/logo.svg' },
+				image: { url: 'https://spacebar.js.org/static/logo.svg' },
 			});
 		});
 
 		test('GIVEN an embed with a pre-defined image THEN unset image THEN return valid toJSON data', () => {
-			const embed = new EmbedBuilder({ image: { url: 'https://discord.js/org/static/logo.svg' } });
+			const embed = new EmbedBuilder({ image: { url: 'https://spacebar.js/org/static/logo.svg' } });
 			embed.setImage(null);
 
 			expect(embed.toJSON()).toStrictEqual({ image: undefined });
@@ -240,10 +240,10 @@ describe('Embed', () => {
 	describe('Embed Author', () => {
 		test('GIVEN an embed with a pre-defined author THEN returns valid toJSON data', () => {
 			const embed = new EmbedBuilder({
-				author: { name: 'Wumpus', icon_url: 'https://discord.js.org/static/logo.svg', url: 'https://discord.js.org' },
+				author: { name: 'Wumpus', icon_url: 'https://spacebar.js.org/static/logo.svg', url: 'https://spacebar.js.org' },
 			});
 			expect(embed.toJSON()).toStrictEqual({
-				author: { name: 'Wumpus', icon_url: 'https://discord.js.org/static/logo.svg', url: 'https://discord.js.org' },
+				author: { name: 'Wumpus', icon_url: 'https://spacebar.js.org/static/logo.svg', url: 'https://spacebar.js.org' },
 			});
 		});
 
@@ -251,18 +251,18 @@ describe('Embed', () => {
 			const embed = new EmbedBuilder();
 			embed.setAuthor({
 				name: 'Wumpus',
-				iconURL: 'https://discord.js.org/static/logo.svg',
-				url: 'https://discord.js.org',
+				iconURL: 'https://spacebar.js.org/static/logo.svg',
+				url: 'https://spacebar.js.org',
 			});
 
 			expect(embed.toJSON()).toStrictEqual({
-				author: { name: 'Wumpus', icon_url: 'https://discord.js.org/static/logo.svg', url: 'https://discord.js.org' },
+				author: { name: 'Wumpus', icon_url: 'https://spacebar.js.org/static/logo.svg', url: 'https://spacebar.js.org' },
 			});
 		});
 
 		test('GIVEN an embed with a pre-defined author THEN unset author THEN return valid toJSON data', () => {
 			const embed = new EmbedBuilder({
-				author: { name: 'Wumpus', icon_url: 'https://discord.js.org/static/logo.svg', url: 'https://discord.js.org' },
+				author: { name: 'Wumpus', icon_url: 'https://spacebar.js.org/static/logo.svg', url: 'https://spacebar.js.org' },
 			});
 			embed.setAuthor(null);
 
@@ -279,25 +279,25 @@ describe('Embed', () => {
 	describe('Embed Footer', () => {
 		test('GIVEN an embed with a pre-defined footer THEN returns valid toJSON data', () => {
 			const embed = new EmbedBuilder({
-				footer: { text: 'Wumpus', icon_url: 'https://discord.js.org/static/logo.svg' },
+				footer: { text: 'Wumpus', icon_url: 'https://spacebar.js.org/static/logo.svg' },
 			});
 			expect(embed.toJSON()).toStrictEqual({
-				footer: { text: 'Wumpus', icon_url: 'https://discord.js.org/static/logo.svg' },
+				footer: { text: 'Wumpus', icon_url: 'https://spacebar.js.org/static/logo.svg' },
 			});
 		});
 
 		test('GIVEN an embed using Embed#setAuthor THEN returns valid toJSON data', () => {
 			const embed = new EmbedBuilder();
-			embed.setFooter({ text: 'Wumpus', iconURL: 'https://discord.js.org/static/logo.svg' });
+			embed.setFooter({ text: 'Wumpus', iconURL: 'https://spacebar.js.org/static/logo.svg' });
 
 			expect(embed.toJSON()).toStrictEqual({
-				footer: { text: 'Wumpus', icon_url: 'https://discord.js.org/static/logo.svg' },
+				footer: { text: 'Wumpus', icon_url: 'https://spacebar.js.org/static/logo.svg' },
 			});
 		});
 
 		test('GIVEN an embed with a pre-defined footer THEN unset footer THEN return valid toJSON data', () => {
 			const embed = new EmbedBuilder({
-				footer: { text: 'Wumpus', icon_url: 'https://discord.js.org/static/logo.svg' },
+				footer: { text: 'Wumpus', icon_url: 'https://spacebar.js.org/static/logo.svg' },
 			});
 			embed.setFooter(null);
 

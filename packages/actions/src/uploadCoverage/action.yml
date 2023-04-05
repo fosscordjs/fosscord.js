@@ -33,11 +33,11 @@ runs:
         files: ./packages/collection/coverage/cobertura-coverage.xml
         flags: collection
 
-    - name: Upload Discord.js Coverage
+    - name: Upload spacebar.js Coverage
       uses: codecov/codecov-action@v3
       with:
-        files: ./packages/discord.js/coverage/cobertura-coverage.xml
-        flags: discord.js
+        files: ./packages/spacebar.js/coverage/cobertura-coverage.xml
+        flags: spacebar.js
 
     - name: Upload Next Coverage
       uses: codecov/codecov-action@v3

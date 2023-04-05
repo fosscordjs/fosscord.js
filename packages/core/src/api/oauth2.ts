@@ -1,5 +1,6 @@
 import { URL } from 'node:url';
-import { type RequestData, type REST, makeURLSearchParams } from '@discordjs/rest';
+import type { REST } from '@discordjs/rest';
+import { makeURLSearchParams } from '@discordjs/rest';
 import {
 	Routes,
 	RouteBases,
@@ -33,20 +34,15 @@ export class OAuth2API {
 	 * Performs an OAuth2 token exchange, giving you an access token
 	 *
 	 * @see {@link https://discord.com/developers/docs/topics/oauth2#authorization-code-grant-access-token-exchange-example}
-	 * @param body - The body of the token exchange request
 	 * @param options - The options for the token exchange request
 	 */
-	public async tokenExchange(
-		body: RESTPostOAuth2AccessTokenURLEncodedData,
-		{ signal }: Pick<RequestData, 'signal'> = {},
-	) {
+	public async tokenExchange(options: RESTPostOAuth2AccessTokenURLEncodedData) {
 		return this.rest.post(Routes.oauth2TokenExchange(), {
-			body: makeURLSearchParams(body),
+			body: makeURLSearchParams(options),
 			passThroughBody: true,
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded',
 			},
-			signal,
 		}) as Promise<RESTPostOAuth2AccessTokenResult>;
 	}
 
@@ -54,20 +50,15 @@ export class OAuth2API {
 	 * Refreshes an OAuth2 access token, giving you a new one
 	 *
 	 * @see {@link https://discord.com/developers/docs/topics/oauth2#authorization-code-grant-refresh-token-exchange-example}
-	 * @param body - The options for the refresh token request
 	 * @param options - The options for the refresh token request
 	 */
-	public async refreshToken(
-		body: RESTPostOAuth2RefreshTokenURLEncodedData,
-		{ signal }: Pick<RequestData, 'signal'> = {},
-	) {
+	public async refreshToken(options: RESTPostOAuth2RefreshTokenURLEncodedData) {
 		return this.rest.post(Routes.oauth2TokenExchange(), {
-			body: makeURLSearchParams(body),
+			body: makeURLSearchParams(options),
 			passThroughBody: true,
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded',
 			},
-			signal,
 		}) as Promise<RESTPostOAuth2RefreshTokenResult>;
 	}
 
@@ -77,20 +68,15 @@ export class OAuth2API {
 	 * @remarks
 	 * This is primarily used for testing purposes
 	 * @see {@link https://discord.com/developers/docs/topics/oauth2#client-credentials-grant}
-	 * @param body - The options for the client credentials grant request
 	 * @param options - The options for the client credentials grant request
 	 */
-	public async getToken(
-		body: RESTPostOAuth2ClientCredentialsURLEncodedData,
-		{ signal }: Pick<RequestData, 'signal'> = {},
-	) {
+	public async getToken(options: RESTPostOAuth2ClientCredentialsURLEncodedData) {
 		return this.rest.post(Routes.oauth2TokenExchange(), {
-			body: makeURLSearchParams(body),
+			body: makeURLSearchParams(options),
 			passThroughBody: true,
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded',
 			},
-			signal,
 		}) as Promise<RESTPostOAuth2ClientCredentialsResult>;
 	}
 
@@ -98,23 +84,17 @@ export class OAuth2API {
 	 * Fetches the current bot's application information
 	 *
 	 * @see {@link https://discord.com/developers/docs/topics/oauth2#get-current-bot-application-information}
-	 * @param options - The options for the current bot application information request
 	 */
-	public async getCurrentBotApplicationInformation({ signal }: Pick<RequestData, 'signal'> = {}) {
-		return this.rest.get(Routes.oauth2CurrentApplication(), {
-			signal,
-		}) as Promise<RESTGetAPIOAuth2CurrentApplicationResult>;
+	public async getCurrentBotApplicationInformation() {
+		return this.rest.get(Routes.oauth2CurrentApplication()) as Promise<RESTGetAPIOAuth2CurrentApplicationResult>;
 	}
 
 	/**
 	 * Fetches the current authorization information
 	 *
 	 * @see {@link https://discord.com/developers/docs/topics/oauth2#get-current-authorization-information}
-	 * @param options - The options for the current authorization information request
 	 */
-	public async getCurrentAuthorizationInformation({ signal }: Pick<RequestData, 'signal'> = {}) {
-		return this.rest.get(Routes.oauth2CurrentAuthorization(), {
-			signal,
-		}) as Promise<RESTGetAPIOAuth2CurrentAuthorizationResult>;
+	public async getCurrentAuthorizationInformation() {
+		return this.rest.get(Routes.oauth2CurrentAuthorization()) as Promise<RESTGetAPIOAuth2CurrentAuthorizationResult>;
 	}
 }

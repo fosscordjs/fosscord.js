@@ -34,7 +34,7 @@ export default function Footer() {
 								</a>
 								<a
 									className="focus:ring-width-2 focus:ring-blurple rounded outline-0 focus:ring"
-									href="https://github.com/discordjs/discord.js/discussions"
+									href="https://github.com/spacebarjs/spacebar.js/discussions"
 									rel="noopener noreferrer"
 									target="_blank"
 								>
@@ -47,19 +47,19 @@ export default function Footer() {
 							<div className="flex flex-col gap-1">
 								<a
 									className="focus:ring-width-2 focus:ring-blurple rounded outline-0 focus:ring"
-									href="https://github.com/discordjs/discord.js"
+									href="https://github.com/spacebarjs/spacebar.js"
 									rel="noopener noreferrer"
 									target="_blank"
 								>
-									discord.js
+									spacebar.js
 								</a>
 								<a
 									className="focus:ring-width-2 focus:ring-blurple rounded outline-0 focus:ring"
-									href="https://discordjs.guide"
+									href="https://spacebarjs.guide"
 									rel="noopener noreferrer"
 									target="_blank"
 								>
-									discord.js guide
+									spacebar.js guide
 								</a>
 								<a
 									className="focus:ring-width-2 focus:ring-blurple rounded outline-0 focus:ring"

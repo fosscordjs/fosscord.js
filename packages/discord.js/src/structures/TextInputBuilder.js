@@ -29,5 +29,5 @@ module.exports = TextInputBuilder;
 
 /**
  * @external BuildersTextInput
- * @see {@link https://discord.js.org/#/docs/builders/main/class/TextInputBuilder}
+ * @see {@link https://spacebar.js.org/#/docs/builders/main/class/TextInputBuilder}
  */

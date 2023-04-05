@@ -15,7 +15,7 @@ const getPartialGroupDMChannel = lazy(() => require('../structures/PartialGroupD
 const getForumChannel = lazy(() => require('../structures/ForumChannel'));
 
 /**
- * Creates a discord.js channel from data received from the API.
+ * Creates a spacebar.js channel from data received from the API.
  * @param {Client} client The client
  * @param {APIChannel} data The data of the channel to create
  * @param {Guild} [guild] The guild where this channel belongs
@@ -90,9 +90,9 @@ function transformAPIGuildForumTag(tag) {
     emoji:
       tag.emoji_id ?? tag.emoji_name
         ? {
-            id: tag.emoji_id,
-            name: tag.emoji_name,
-          }
+          id: tag.emoji_id,
+          name: tag.emoji_name,
+        }
         : null,
   };
 }

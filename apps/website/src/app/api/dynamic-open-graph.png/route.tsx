@@ -150,7 +150,7 @@ export async function GET(request: NextRequest) {
 								) : null}
 							</div>
 							<div tw="flex h-full items-end">
-								<span tw="bg-[#5865f2] text-4xl font-black relative rounded-lg py-4 px-8">discord.js</span>
+								<span tw="bg-[#5865f2] text-4xl font-black relative rounded-lg py-4 px-8">spacebar.js</span>
 							</div>
 						</div>
 					</div>

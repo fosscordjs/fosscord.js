@@ -84,14 +84,11 @@ function resolveMemberSearchParams(packageName: string, member: ApiItem): URLSea
 	return params;
 }
 
-// eslint-disable-next-line unicorn/numeric-separators-style
-export const revalidate = 3600;
-
 export async function generateMetadata({ params }: { params: ItemRouteParams }) {
 	const member = (await fetchHeadMember(params))!;
-	const name = `discord.js${member?.displayName ? ` | ${member.displayName}` : ''}`;
-	const ogTitle = `${params.package ?? 'discord.js'}${member?.displayName ? ` | ${member.displayName}` : ''}`;
-	const url = new URL('https://discordjs.dev/api/dynamic-open-graph.png');
+	const name = `spacebar.js${member?.displayName ? ` | ${member.displayName}` : ''}`;
+	const ogTitle = `${params.package ?? 'spacebar.js'}${member?.displayName ? ` | ${member.displayName}` : ''}`;
+	const url = new URL('https://spacebarjs.dev/api/dynamic-open-graph.png');
 	const searchParams = resolveMemberSearchParams(params.package, member);
 	url.search = searchParams.toString();
 	const ogImage = url.toString();
@@ -99,10 +96,10 @@ export async function generateMetadata({ params }: { params: ItemRouteParams }) 
 
 	return {
 		title: name,
-		description: description ?? 'Discord.js API Documentation',
+		description: description ?? 'spacebar.js API Documentation',
 		openGraph: {
 			title: ogTitle,
-			description: description ?? 'Discord.js API Documentation',
+			description: description ?? 'spacebar.js API Documentation',
 			images: ogImage,
 		},
 	} satisfies Metadata;

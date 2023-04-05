@@ -83,7 +83,7 @@ class ModalSubmitInteraction extends BaseInteraction {
   }
 
   /**
-   * Transforms component data to discord.js-compatible data
+   * Transforms component data to spacebar.js-compatible data
    * @param {*} rawComponent The data to transform
    * @returns {ModalData[]}
    */
@@ -106,14 +106,14 @@ class ModalSubmitInteraction extends BaseInteraction {
 
   // These are here only for documentation purposes - they are implemented by InteractionResponses
   /* eslint-disable no-empty-function */
-  deferReply() {}
-  reply() {}
-  fetchReply() {}
-  editReply() {}
-  deleteReply() {}
-  followUp() {}
-  deferUpdate() {}
-  update() {}
+  deferReply() { }
+  reply() { }
+  fetchReply() { }
+  editReply() { }
+  deleteReply() { }
+  followUp() { }
+  deferUpdate() { }
+  update() { }
 }
 
 InteractionResponses.applyToClass(ModalSubmitInteraction, 'showModal');

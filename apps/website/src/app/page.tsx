@@ -7,15 +7,15 @@ import { CODE_EXAMPLE } from '~/util/constants';
 
 export default function Page() {
 	return (
-		<div className="mx-auto flex min-h-screen max-w-6xl flex-col place-items-center gap-12 px-8 py-16 lg:place-content-center lg:px-8 lg:py-0">
+		<div className="mx-auto flex min-h-screen max-w-6xl flex-col place-items-center gap-12 py-16 px-8 lg:place-content-center lg:py-0 lg:px-8">
 			<div className="flex flex-col place-items-center gap-10 lg:flex-row lg:gap-6">
 				<div className="flex max-w-lg flex-col gap-3 lg:mr-8">
 					<h1 className="text-3xl font-black leading-tight sm:text-5xl sm:leading-tight">
-						The <span className="bg-blurple relative rounded px-3 py-1 text-white">most popular</span> way to build
+						The <span className="bg-blurple relative rounded py-1 px-3 text-white">most popular</span> way to build
 						Discord <br /> bots.
 					</h1>
 					<p className="my-6 leading-normal text-neutral-700 dark:text-neutral-300">
-						discord.js is a powerful node.js module that allows you to interact with the Discord API very easily. It
+						spacebar.js is a powerful node.js module that allows you to interact with the Discord API very easily. It
 						takes a much more object-oriented approach than most other JS Discord libraries, making your bot&apos;s code
 						significantly tidier and easier to comprehend.
 					</p>
@@ -28,7 +28,7 @@ export default function Page() {
 						</Link>
 						<a
 							className="dark:bg-dark-400 dark:border-dark-100 dark:hover:bg-dark-300 dark:active:bg-dark-200 border-light-900 hover:bg-light-200 active:bg-light-300 focus:ring-blurple focus:ring-width-2 flex h-11 transform-gpu cursor-pointer select-none appearance-none flex-row place-items-center gap-2 rounded border bg-white px-4 text-base font-semibold leading-none text-black no-underline outline-0 focus:ring active:translate-y-px dark:text-white"
-							href="https://discordjs.guide"
+							href="https://spacebarjs.guide"
 							rel="noopener noreferrer"
 							target="_blank"
 						>
@@ -36,7 +36,7 @@ export default function Page() {
 						</a>
 						<a
 							className="dark:bg-dark-400 dark:border-dark-100 dark:hover:bg-dark-300 dark:active:bg-dark-200 border-light-900 hover:bg-light-200 active:bg-light-300 focus:ring-blurple focus:ring-width-2 flex h-11 transform-gpu cursor-pointer select-none appearance-none appearance-none flex-row place-items-center gap-2 rounded border bg-white px-4 text-base font-semibold leading-none text-black no-underline outline-0 focus:ring active:translate-y-px dark:text-white"
-							href="https://github.com/discordjs/discord.js"
+							href="https://github.com/spacebarjs/spacebar.js"
 							rel="noopener noreferrer"
 							target="_blank"
 						>

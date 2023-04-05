@@ -118,7 +118,7 @@ class ClientUser extends User {
    * @returns {ClientPresence}
    * @example
    * // Set the client user's presence
-   * client.user.setPresence({ activities: [{ name: 'with discord.js' }], status: 'idle' });
+   * client.user.setPresence({ activities: [{ name: 'with spacebar.js' }], status: 'idle' });
    */
   setPresence(data) {
     return this.client.presence.set(data);
@@ -162,7 +162,7 @@ class ClientUser extends User {
    * @returns {ClientPresence}
    * @example
    * // Set the client user's activity
-   * client.user.setActivity('discord.js', { type: ActivityType.Watching });
+   * client.user.setActivity('spacebar.js', { type: ActivityType.Watching });
    */
   setActivity(name, options = {}) {
     if (!name) return this.setPresence({ activities: [], shardId: options.shardId });

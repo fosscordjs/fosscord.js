@@ -13,7 +13,7 @@ import '~/styles/ch.css';
 import '~/styles/main.css';
 
 export const metadata: Metadata = {
-	title: 'discord.js',
+	title: 'spacebar.js',
 	description: DESCRIPTION,
 	viewport: {
 		minimumScale: 1,
@@ -48,17 +48,17 @@ export const metadata: Metadata = {
 	colorScheme: 'light dark',
 
 	appleWebApp: {
-		title: 'discord.js',
+		title: 'spacebar.js',
 	},
 
-	applicationName: 'discord.js',
+	applicationName: 'spacebar.js',
 
 	openGraph: {
-		siteName: 'discord.js',
+		siteName: 'spacebar.js',
 		type: 'website',
-		title: 'discord.js',
+		title: 'spacebar.js',
 		description: DESCRIPTION,
-		images: 'https://discordjs.dev/api/open-graph.png',
+		images: 'https://spacebarjs.dev/api/open-graph.png',
 	},
 
 	twitter: {

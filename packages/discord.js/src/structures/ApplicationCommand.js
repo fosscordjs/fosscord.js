@@ -567,7 +567,7 @@ class ApplicationCommand extends Base {
       required:
         option.required ??
         (option.type === ApplicationCommandOptionType.Subcommand ||
-        option.type === ApplicationCommandOptionType.SubcommandGroup
+          option.type === ApplicationCommandOptionType.SubcommandGroup
           ? undefined
           : false),
       autocomplete: option.autocomplete,
@@ -602,5 +602,5 @@ module.exports = ApplicationCommand;
 
 /**
  * @external ApplicationCommandOptionAllowedChannelTypes
- * @see {@link https://discord.js.org/#/docs/builders/main/typedef/ApplicationCommandOptionAllowedChannelTypes}
+ * @see {@link https://spacebar.js.org/#/docs/builders/main/typedef/ApplicationCommandOptionAllowedChannelTypes}
  */

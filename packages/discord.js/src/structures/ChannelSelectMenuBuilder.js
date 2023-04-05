@@ -29,5 +29,5 @@ module.exports = ChannelSelectMenuBuilder;
 
 /**
  * @external BuildersChannelSelectMenu
- * @see {@link https://discord.js.org/#/docs/builders/main/class/ChannelSelectMenuBuilder}
+ * @see {@link https://spacebar.js.org/#/docs/builders/main/class/ChannelSelectMenuBuilder}
  */

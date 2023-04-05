@@ -29,7 +29,7 @@ export interface Collection<K, V> extends Map<K, V> {
 }
 
 /**
- * A Map with additional utility methods. This is used throughout discord.js rather than Arrays for anything that has
+ * A Map with additional utility methods. This is used throughout spacebar.js rather than Arrays for anything that has
  * an ID, for significantly improved performance and ease-of-use.
  *
  * @typeParam K - The key type this collection holds
@@ -217,7 +217,7 @@ export class Collection<K, V> extends Map<K, V> {
 	/**
 	 * Searches for a single item where the given function returns a truthy value. This behaves like
 	 * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find | Array.find()}.
-	 * All collections used in Discord.js are mapped using their `id` property, and if you want to find by id you
+	 * All collections used in spacebar.js are mapped using their `id` property, and if you want to find by id you
 	 * should use the `get` method. See
 	 * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/get | MDN} for details.
 	 *

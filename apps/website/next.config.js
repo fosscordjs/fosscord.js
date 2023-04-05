@@ -26,13 +26,4 @@ export default withBundleAnalyzer({
 		contentDispositionType: 'attachment',
 		contentSecurityPolicy: "default-src 'self'; frame-src 'none'; sandbox;",
 	},
-	async redirects() {
-		return [
-			{
-				source: '/static/logo.svg',
-				destination: '/logo.svg',
-				permanent: true,
-			},
-		];
-	},
 });

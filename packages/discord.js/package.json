@@ -1,6 +1,6 @@
 {
-  "name": "discord.js",
-  "version": "14.9.0",
+  "name": "spacebar.js",
+  "version": "14.8.0",
   "description": "A powerful library for interacting with the Discord API",
   "scripts": {
     "test": "yarn docs:test && yarn test:typescript",
@@ -11,7 +11,7 @@
     "docs": "docgen -i './src/*.js' './src/**/*.js' -c ./docs/index.json -r ../../ -o ./docs/docs.json",
     "docs:test": "docgen -i './src/*.js' './src/**/*.js' -c ./docs/index.json -r ../../",
     "prepack": "yarn lint && yarn test",
-    "changelog": "git cliff --prepend ./CHANGELOG.md -u -c ./cliff.toml -r ../../ --include-path 'packages/discord.js/*'",
+    "changelog": "git cliff --prepend ./CHANGELOG.md -u -c ./cliff.toml -r ../../ --include-path 'packages/spacebar.js/*'",
     "release": "cliff-jumper"
   },
   "main": "./src/index.js",
@@ -42,12 +42,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/discordjs/discord.js.git"
+    "url": "https://github.com/spacebarjs/spacebar.js.git"
   },
   "bugs": {
-    "url": "https://github.com/discordjs/discord.js/issues"
+    "url": "https://github.com/spacebarjs/spacebar.js/issues"
   },
-  "homepage": "https://discord.js.org",
+  "homepage": "https://spacebar.js.org",
   "dependencies": {
     "@discordjs/builders": "workspace:^",
     "@discordjs/collection": "workspace:^",
@@ -66,15 +66,15 @@
   "devDependencies": {
     "@discordjs/docgen": "workspace:^",
     "@favware/cliff-jumper": "^2.0.0",
-    "@types/node": "16.18.23",
+    "@types/node": "16.18.21",
     "dtslint": "^4.2.1",
-    "eslint": "^8.37.0",
+    "eslint": "^8.36.0",
     "eslint-formatter-pretty": "^5.0.0",
     "jest": "^29.5.0",
     "prettier": "^2.8.7",
     "tsd": "^0.28.1",
     "tslint": "^6.1.3",
-    "typescript": "^5.0.3"
+    "typescript": "^5.0.2"
   },
   "engines": {
     "node": ">=16.9.0"

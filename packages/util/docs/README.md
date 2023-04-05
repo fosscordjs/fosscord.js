@@ -1,1 +1,1 @@
-## [View the documentation here.](https://discord.js.org/#/docs/rest)
+## [View the documentation here.](https://spacebar.js.org/#/docs/rest)

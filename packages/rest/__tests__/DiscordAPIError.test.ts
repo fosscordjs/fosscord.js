@@ -8,7 +8,7 @@ test('Unauthorized', () => {
 		0,
 		401,
 		'PATCH',
-		'https://discord.com/api/v10/guilds/:id',
+		'https://api.spacebar.chat/guilds/:id',
 		{
 			files: undefined,
 			body: undefined,
@@ -20,7 +20,7 @@ test('Unauthorized', () => {
 	expect(error.method).toEqual('PATCH');
 	expect(error.name).toEqual('DiscordAPIError[0]');
 	expect(error.status).toEqual(401);
-	expect(error.url).toEqual('https://discord.com/api/v10/guilds/:id');
+	expect(error.url).toEqual('https://api.spacebar.chat/guilds/:id');
 	expect(error.requestBody.files).toBeUndefined();
 	expect(error.requestBody.json).toBeUndefined();
 });
@@ -37,7 +37,7 @@ test('Invalid Form Body Error (error.{property}._errors.{index})', () => {
 		50_035,
 		400,
 		'PATCH',
-		'https://discord.com/api/v10/users/@me',
+		'https://api.spacebar.chat/users/@me',
 		{
 			files: undefined,
 			body: {
@@ -53,7 +53,7 @@ test('Invalid Form Body Error (error.{property}._errors.{index})', () => {
 	expect(error.method).toEqual('PATCH');
 	expect(error.name).toEqual('DiscordAPIError[50035]');
 	expect(error.status).toEqual(400);
-	expect(error.url).toEqual('https://discord.com/api/v10/users/@me');
+	expect(error.url).toEqual('https://api.spacebar.chat/users/@me');
 	expect(error.requestBody.files).toBeUndefined();
 	expect(error.requestBody.json).toStrictEqual({ username: 'a' });
 });
@@ -72,7 +72,7 @@ test('Invalid FormFields Error (error.errors.{property}.{property}.{index}.{prop
 		50_035,
 		400,
 		'POST',
-		'https://discord.com/api/v10/channels/:id',
+		'https://api.spacebar.chat/channels/:id',
 		{},
 	);
 
@@ -83,7 +83,7 @@ test('Invalid FormFields Error (error.errors.{property}.{property}.{index}.{prop
 	expect(error.method).toEqual('POST');
 	expect(error.name).toEqual('DiscordAPIError[50035]');
 	expect(error.status).toEqual(400);
-	expect(error.url).toEqual('https://discord.com/api/v10/channels/:id');
+	expect(error.url).toEqual('https://api.spacebar.chat/channels/:id');
 });
 
 test('Invalid FormFields Error (error.errors.{property}.{property}._errors.{index}._errors)', () => {
@@ -100,7 +100,7 @@ test('Invalid FormFields Error (error.errors.{property}.{property}._errors.{inde
 		50_035,
 		400,
 		'PATCH',
-		'https://discord.com/api/v10/guilds/:id',
+		'https://api.spacebar.chat/guilds/:id',
 		{},
 	);
 
@@ -111,7 +111,7 @@ test('Invalid FormFields Error (error.errors.{property}.{property}._errors.{inde
 	expect(error.method).toEqual('PATCH');
 	expect(error.name).toEqual('DiscordAPIError[50035]');
 	expect(error.status).toEqual(400);
-	expect(error.url).toEqual('https://discord.com/api/v10/guilds/:id');
+	expect(error.url).toEqual('https://api.spacebar.chat/guilds/:id');
 });
 
 test('Invalid Oauth Code Error (error.error)', () => {
@@ -123,7 +123,7 @@ test('Invalid Oauth Code Error (error.error)', () => {
 		'invalid_request',
 		400,
 		'POST',
-		'https://discord.com/api/v10/oauth2/token',
+		'https://api.spacebar.chat/oauth2/token',
 		{
 			body: new URLSearchParams([
 				['client_id', '1234567890123545678'],
@@ -140,5 +140,5 @@ test('Invalid Oauth Code Error (error.error)', () => {
 	expect(error.method).toEqual('POST');
 	expect(error.name).toEqual('DiscordAPIError[invalid_request]');
 	expect(error.status).toEqual(400);
-	expect(error.url).toEqual('https://discord.com/api/v10/oauth2/token');
+	expect(error.url).toEqual('https://api.spacebar.chat/oauth2/token');
 });

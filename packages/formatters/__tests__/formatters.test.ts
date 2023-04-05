@@ -27,96 +27,96 @@ import {
 
 describe('Message formatters', () => {
 	describe('codeBlock', () => {
-		test('GIVEN "discord.js" with no language THEN returns "```\\ndiscord.js```"', () => {
-			expect<'```\ndiscord.js\n```'>(codeBlock('discord.js')).toEqual('```\ndiscord.js\n```');
+		test('GIVEN "spacebar.js" with no language THEN returns "```\\nspacebar.js```"', () => {
+			expect<'```\nspacebar.js\n```'>(codeBlock('spacebar.js')).toEqual('```\nspacebar.js\n```');
 		});
 
-		test('GIVEN "discord.js" with "js" as language THEN returns "```js\\ndiscord.js```"', () => {
-			expect<'```js\ndiscord.js\n```'>(codeBlock('js', 'discord.js')).toEqual('```js\ndiscord.js\n```');
+		test('GIVEN "spacebar.js" with "js" as language THEN returns "```js\\nspacebar.js```"', () => {
+			expect<'```js\nspacebar.js\n```'>(codeBlock('js', 'spacebar.js')).toEqual('```js\nspacebar.js\n```');
 		});
 	});
 
 	describe('inlineCode', () => {
-		test('GIVEN "discord.js" THEN returns "`discord.js`"', () => {
-			expect<'`discord.js`'>(inlineCode('discord.js')).toEqual('`discord.js`');
+		test('GIVEN "spacebar.js" THEN returns "`spacebar.js`"', () => {
+			expect<'`spacebar.js`'>(inlineCode('spacebar.js')).toEqual('`spacebar.js`');
 		});
 	});
 
 	describe('italic', () => {
-		test('GIVEN "discord.js" THEN returns "_discord.js_"', () => {
-			expect<'_discord.js_'>(italic('discord.js')).toEqual('_discord.js_');
+		test('GIVEN "spacebar.js" THEN returns "_spacebar.js_"', () => {
+			expect<'_spacebar.js_'>(italic('spacebar.js')).toEqual('_spacebar.js_');
 		});
 	});
 
 	describe('bold', () => {
-		test('GIVEN "discord.js" THEN returns "**discord.js**"', () => {
-			expect<'**discord.js**'>(bold('discord.js')).toEqual('**discord.js**');
+		test('GIVEN "spacebar.js" THEN returns "**spacebar.js**"', () => {
+			expect<'**spacebar.js**'>(bold('spacebar.js')).toEqual('**spacebar.js**');
 		});
 	});
 
 	describe('underscore', () => {
-		test('GIVEN "discord.js" THEN returns "__discord.js__"', () => {
-			expect<'__discord.js__'>(underscore('discord.js')).toEqual('__discord.js__');
+		test('GIVEN "spacebar.js" THEN returns "__spacebar.js__"', () => {
+			expect<'__spacebar.js__'>(underscore('spacebar.js')).toEqual('__spacebar.js__');
 		});
 	});
 
 	describe('strikethrough', () => {
-		test('GIVEN "discord.js" THEN returns "~~discord.js~~"', () => {
-			expect<'~~discord.js~~'>(strikethrough('discord.js')).toEqual('~~discord.js~~');
+		test('GIVEN "spacebar.js" THEN returns "~~spacebar.js~~"', () => {
+			expect<'~~spacebar.js~~'>(strikethrough('spacebar.js')).toEqual('~~spacebar.js~~');
 		});
 	});
 
 	describe('quote', () => {
-		test('GIVEN "discord.js" THEN returns "> discord.js"', () => {
-			expect<'> discord.js'>(quote('discord.js')).toEqual('> discord.js');
+		test('GIVEN "spacebar.js" THEN returns "> spacebar.js"', () => {
+			expect<'> spacebar.js'>(quote('spacebar.js')).toEqual('> spacebar.js');
 		});
 	});
 
 	describe('blockQuote', () => {
-		test('GIVEN "discord.js" THEN returns ">>> discord.js"', () => {
-			expect<'>>> discord.js'>(blockQuote('discord.js')).toEqual('>>> discord.js');
+		test('GIVEN "spacebar.js" THEN returns ">>> spacebar.js"', () => {
+			expect<'>>> spacebar.js'>(blockQuote('spacebar.js')).toEqual('>>> spacebar.js');
 		});
 	});
 
 	describe('hideLinkEmbed', () => {
-		test('GIVEN "https://discord.js.org" THEN returns "<https://discord.js.org>"', () => {
-			expect<'<https://discord.js.org>'>(hideLinkEmbed('https://discord.js.org')).toEqual('<https://discord.js.org>');
+		test('GIVEN "https://spacebar.js.org" THEN returns "<https://spacebar.js.org>"', () => {
+			expect<'<https://spacebar.js.org>'>(hideLinkEmbed('https://spacebar.js.org')).toEqual('<https://spacebar.js.org>');
 		});
 
-		test('GIVEN new URL("https://discord.js.org") THEN returns "<https://discord.js.org>"', () => {
-			expect<`<${string}>`>(hideLinkEmbed(new URL('https://discord.js.org/'))).toEqual('<https://discord.js.org/>');
+		test('GIVEN new URL("https://spacebar.js.org") THEN returns "<https://spacebar.js.org>"', () => {
+			expect<`<${string}>`>(hideLinkEmbed(new URL('https://spacebar.js.org/'))).toEqual('<https://spacebar.js.org/>');
 		});
 	});
 
 	describe('hyperlink', () => {
 		test('GIVEN content and string URL THEN returns "[content](url)"', () => {
-			expect<'[discord.js](https://discord.js.org)'>(hyperlink('discord.js', 'https://discord.js.org')).toEqual(
-				'[discord.js](https://discord.js.org)',
+			expect<'[spacebar.js](https://spacebar.js.org)'>(hyperlink('spacebar.js', 'https://spacebar.js.org')).toEqual(
+				'[spacebar.js](https://spacebar.js.org)',
 			);
 		});
 
 		test('GIVEN content and URL THEN returns "[content](url)"', () => {
-			expect<`[discord.js](${string})`>(hyperlink('discord.js', new URL('https://discord.js.org'))).toEqual(
-				'[discord.js](https://discord.js.org/)',
+			expect<`[spacebar.js](${string})`>(hyperlink('spacebar.js', new URL('https://spacebar.js.org'))).toEqual(
+				'[spacebar.js](https://spacebar.js.org/)',
 			);
 		});
 
 		test('GIVEN content, string URL, and title THEN returns "[content](url "title")"', () => {
-			expect<'[discord.js](https://discord.js.org "Official Documentation")'>(
-				hyperlink('discord.js', 'https://discord.js.org', 'Official Documentation'),
-			).toEqual('[discord.js](https://discord.js.org "Official Documentation")');
+			expect<'[spacebar.js](https://spacebar.js.org "Official Documentation")'>(
+				hyperlink('spacebar.js', 'https://spacebar.js.org', 'Official Documentation'),
+			).toEqual('[spacebar.js](https://spacebar.js.org "Official Documentation")');
 		});
 
 		test('GIVEN content, URL, and title THEN returns "[content](url "title")"', () => {
-			expect<`[discord.js](${string} "Official Documentation")`>(
-				hyperlink('discord.js', new URL('https://discord.js.org'), 'Official Documentation'),
-			).toEqual('[discord.js](https://discord.js.org/ "Official Documentation")');
+			expect<`[spacebar.js](${string} "Official Documentation")`>(
+				hyperlink('spacebar.js', new URL('https://spacebar.js.org'), 'Official Documentation'),
+			).toEqual('[spacebar.js](https://spacebar.js.org/ "Official Documentation")');
 		});
 	});
 
 	describe('spoiler', () => {
-		test('GIVEN "discord.js" THEN returns "||discord.js||"', () => {
-			expect<'||discord.js||'>(spoiler('discord.js')).toEqual('||discord.js||');
+		test('GIVEN "spacebar.js" THEN returns "||spacebar.js||"', () => {
+			expect<'||spacebar.js||'>(spoiler('spacebar.js')).toEqual('||spacebar.js||');
 		});
 	});
 

@@ -54,11 +54,6 @@ class GuildMember extends Base {
      */
     this.communicationDisabledUntilTimestamp = null;
 
-    /**
-     * The role ids of the member
-     * @type {Snowflake[]}
-     * @private
-     */
     this._roles = [];
     if (data) this._patch(data);
   }
@@ -91,7 +86,7 @@ class GuildMember extends Base {
     if ('pending' in data) {
       this.pending = data.pending;
     } else if (!this.partial) {
-      // See https://github.com/discordjs/discord.js/issues/6546 for more info.
+      // See https://github.com/spacebarjs/spacebar.js/issues/6546 for more info.
       this.pending ??= false;
     }
 
@@ -397,7 +392,7 @@ class GuildMember extends Base {
    *   .catch(console.error);
    */
   ban(options) {
-    return this.guild.bans.create(this, options);
+    return this.guild.members.ban(this, options);
   }
 
   /**
@@ -492,21 +487,11 @@ class GuildMember extends Base {
     json.displayAvatarURL = this.displayAvatarURL();
     return json;
   }
-}
 
-/**
- * Sends a message to this user.
- * @method send
- * @memberof GuildMember
- * @instance
- * @param {string|MessagePayload|MessageCreateOptions} options The options to provide
- * @returns {Promise<Message>}
- * @example
- * // Send a direct message
- * guildMember.send('Hello!')
- *   .then(message => console.log(`Sent message: ${message.content} to ${guildMember.displayName}`))
- *   .catch(console.error);
- */
+  // These are here only for documentation purposes - they are implemented by TextBasedChannel
+  /* eslint-disable no-empty-function */
+  send() { }
+}
 
 TextBasedChannel.applyToClass(GuildMember);
 
